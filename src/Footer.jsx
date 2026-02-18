@@ -1,11 +1,11 @@
+
 function Footer(){
     return (
-        <div>
-            <p>
-              &copy;  Subash Y | All rights are resevered.
+        <footer>
+             <p>
+              &copy; 2026  Subash Y | All rights are resevered.
             </p>
-
-        </div>
+        </footer>
 
     );
 }
