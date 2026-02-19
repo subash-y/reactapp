@@ -6,7 +6,7 @@ function Course({show, name = "Course Name Not Found", image = NOIMG, price,rati
         <div className="card">
             <img src={image} alt={name} />
             <h3>{name}</h3>
-            <p>{price}</p>
+            <p>${price}</p>
             <p>Rating:{rating}</p>
         </div>
 
