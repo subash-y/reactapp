@@ -1,7 +1,7 @@
 import NOIMG from './assets/noimg.jpg'
 
 function Course({show, name = "Course Name Not Found", image = NOIMG, price,rating=0}) {
-    if(show){
+    
         return (
         <div className="card">
             <img src={image} alt={name} />
@@ -11,12 +11,7 @@ function Course({show, name = "Course Name Not Found", image = NOIMG, price,rati
         </div>
 
     );
-    }
-    else{
-        return(
-            <div className="card">Course Not available</div>
-        );
-    }
+    
 }
 
 
