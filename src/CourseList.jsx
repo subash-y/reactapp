@@ -2,7 +2,7 @@ import Course from './Course';
 import HTML from './assets/html.jpeg'
 import CSS from './assets/CSS.jpg'
 import JS from './assets/js.png'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function CourseList() {
     //useSet hook
@@ -12,6 +12,10 @@ function CourseList() {
     { name: "Javascript", price: 299, image: JS, rating: 5, id: 3 },
     { name: "React", price: 100, rating: 3.0, id: 4 }
 ]);//coursedata
+
+    useEffect(()=>{
+        console.log("useEffect called");
+    });
 
     function handleDelete(id){
         const newCourses = courses.filter((course) => course.id != id)
@@ -24,7 +28,8 @@ function CourseList() {
     const vfmcourses = courses.filter((course)=>course.price<200);
 */
     const coursesList = courses.map((course) => 
-        <Course 
+        <Course
+        key={course.id} 
         name={course.name} 
         price={course.price}
         image={course.image} 

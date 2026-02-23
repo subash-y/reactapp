@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import NOIMG from './assets/noimg.jpg'
 
 
@@ -12,6 +12,10 @@ function Course({ show, name = "Course Name Not Found", image = NOIMG, price, ra
         setPurchased(true);
         console.log(purchased);
     }
+
+    useEffect(()=>{
+        console.log("Inside course useEffect called")
+    })
 
     return (
         <div className="card">
