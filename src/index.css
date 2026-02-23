@@ -52,3 +52,9 @@
   color: black;
   border: 1px solid #555555;
 }
+.error {
+  color: darkblue;
+  font-size: 8rem;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
