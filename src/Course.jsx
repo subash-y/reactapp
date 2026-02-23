@@ -3,9 +3,10 @@ import NOIMG from './assets/noimg.jpg'
 
 
 
-function Course({ show, name = "Course Name Not Found", image = NOIMG, price, rating = 0 }) {
+function Course({ show, name = "Course Name Not Found", image = NOIMG, price, rating = 0,ondelete }) {
 
     const [purchased,setPurchased] = useState(false);
+
     function BuyCourse(discount,e) {
         console.log(name,"purchased with",discount,"% discount");
         setPurchased(true);
@@ -20,6 +21,7 @@ function Course({ show, name = "Course Name Not Found", image = NOIMG, price, ra
             <p>Rating:{rating}</p>
             <button onClick={(event)=> BuyCourse(20,event)}>Buy now</button>
             <p>{purchased?"Already purchased":"Get it now"}</p>
+            <button onClick={ondelete}>Delete</button>
         </div>
 
     );
