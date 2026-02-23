@@ -32,3 +32,23 @@
 .card p {
   margin-top: 0.5rem;          /* remove extra space above paragraph */
 }
+
+.card button{
+  background-color: rgb(132, 130, 130,0.5);
+  border: none;
+  color: white;
+  padding: 15px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition-duration: 0.4s;
+}
+
+.card button:hover{
+  background-color: rgb(65, 171, 65,0.5);
+  color: black;
+  border: 1px solid #555555;
+}
