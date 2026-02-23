@@ -1,21 +1,19 @@
 import Course from './Course';
-import HTML from './assets/html.jpeg'
-import CSS from './assets/CSS.jpg'
-import JS from './assets/js.png'
+
 import { useEffect, useState } from 'react';
 
 function CourseList() {
     //useSet hook
-    const [courses,setCourses] = useState([
-    { name: "HTML", price: 199, image: HTML, rating: 4.5, id: 1 },
-    { name: "CSS", price: 150, image: CSS, rating: 4.0, id: 2 },
-    { name: "Javascript", price: 299, image: JS, rating: 5, id: 3 },
-    { name: "React", price: 100, rating: 3.0, id: 4 }
-]);//coursedata
+    const [courses,setCourses] = useState(null);//coursedata
 
     useEffect(()=>{
         console.log("useEffect called");
-    });
+        fetch('http://localhost:3000/courses')
+        .then(response => {console.log(response)
+            return response.json();
+        }).then(data => setCourses(data))
+        
+    },[]); //We usually don't update state in useEffect because it run infinte,but here we did because it run only one time we have empty dependency array[] here. 
 
     function handleDelete(id){
         const newCourses = courses.filter((course) => course.id != id)
@@ -27,6 +25,10 @@ function CourseList() {
 
     const vfmcourses = courses.filter((course)=>course.price<200);
 */
+
+    if(!courses){
+        return <></>
+    }
     const coursesList = courses.map((course) => 
         <Course
         key={course.id} 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import NOIMG from './assets/noimg.jpg'
+import NOIMG from '../data/assets/noimg.jpg'
 
 
 
@@ -14,7 +14,8 @@ function Course({ show, name = "Course Name Not Found", image = NOIMG, price, ra
     }
 
     useEffect(()=>{
-        console.log("Inside course useEffect called")
+        console.log("Inside course useEffect called");
+
     })
 
     return (
@@ -34,3 +35,8 @@ function Course({ show, name = "Course Name Not Found", image = NOIMG, price, ra
 
 
 export default Course
+
+
+//Command for run the jsondb as local server
+
+//npx json-server --watch data/dummyData --port 3000 --static ./data
