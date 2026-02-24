@@ -1,31 +1,19 @@
 import Course from './Course';
 
 import { useEffect, useState } from 'react';
+import useFetch from './useFetch';
 
 function CourseList() {
-    //useSet hook
-    const [courses, setCourses] = useState(null);//coursedata
-    const [error, setError] = useState(null);
 
+    const [courses, setCourses] = useState(null);   // local state for courses
+    const [data, error] = useFetch('http://localhost:3000/courses');
+
+    // When data is fetched, update local state
     useEffect(() => {
-        setTimeout(() => {
-
-            fetch('http://localhost:3000/courses')
-                .then(response => {
-                    console.log(response)
-                    if (!response.ok) {
-                        throw Error("Couldn't retrieve data.");
-                    }
-                    return response.json();
-                }).then(data => setCourses(data))
-                .catch((error) => {
-                    console.log(error.message);
-                    setError(error.message);
-                })
-
-        },1000)
-
-    }, []); //We usually don't update state in useEffect because it run infinte,but here we did because it run only one time we have empty dependency array[] here. 
+        if (data) {
+            setCourses(data);
+        }
+    }, [data]);
 
     function handleDelete(id) {
         const newCourses = courses.filter((course) => course.id != id)
@@ -41,7 +29,7 @@ function CourseList() {
     if (!courses) {
         return (
             <>
-                {!error && <img src="data/assets/loading.gif"></img>}
+                {!error && <img className='image' src="data/assets/loading.gif"></img>}
                 {error && <p class="error">{error}</p>}
             </>
         )
