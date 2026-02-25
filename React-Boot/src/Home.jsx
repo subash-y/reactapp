@@ -1,5 +1,8 @@
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Login from "./Login";
+
+export const dataContext = createContext();
 
 function Home() {
 
@@ -9,7 +12,6 @@ function Home() {
     useEffect(() => {
         const controller = new AbortController();
         const signal = controller.signal;
-        setTimeout(() => {
             fetch('http://localhost:3000/posts', { signal })
                 .then(response => {
                     if (!response.ok) {
@@ -21,7 +23,6 @@ function Home() {
                     console.log(error.message);
                     setError(error.message);
                 })
-        }, 5000);
         //Cleanup Function 
         return () => {
             console.log("Unmounted,Cleaning up");
@@ -29,10 +30,15 @@ function Home() {
         };
     }, []);
 
-
+    const data = "Datadata"
 
     return (
         <>
+        {/**dataContext tag is created using create hook. */}
+        <dataContext.Provider value={data}> 
+            <Login/>
+        </dataContext.Provider>
+
             <div className="container">
                 <Link className="btn btn-dark mt-4" to='/login'>Login</Link>
                 <div className="row justify-content-center m-3">

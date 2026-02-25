@@ -1,5 +1,6 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect,createContext } from "react";
 import { Link } from "react-router-dom";
+import Counter from "./Counter";
 
 function Login() {
 
@@ -21,6 +22,7 @@ function Login() {
     }
     return (
         <>
+            <Counter/>
             <Link className="btn btn-success mt-3" to="/">Home</Link>
             <form className="my-5" style={{ width: "50%", margin: "auto" }}>
                 <div className="mb-3">
