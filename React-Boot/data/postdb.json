@@ -1,0 +1,64 @@
+{
+    "posts":[
+  {
+    "id": "201",
+    "title": "Morning Motivation",
+    "content": "Start your day with positivity and gratitude.",
+    "created_at": "2024-02-01"
+  },
+  {
+    "id": "202",
+    "title": "Exploring Nature",
+    "content": "A walk in the forest clears the mind.",
+    "created_at": "2024-02-03"
+  },
+  {
+    "id": "203",
+    "title": "Healthy Eating Tips",
+    "content": "Incorporate more greens and whole grains into meals.",
+    "created_at": "2024-02-05"
+  },
+  {
+    "id": "204",
+    "title": "Learning Python",
+    "content": "Functions and loops make coding powerful.",
+    "created_at": "2024-02-07"
+  },
+  {
+    "id": "205",
+    "title": "Travel Diaries",
+    "content": "Paris offers a blend of history and modern charm.",
+    "created_at": "2024-02-10"
+  },
+  {
+    "id": "206",
+    "title": "Mindfulness Practice",
+    "content": "Meditation helps reduce stress and improve focus.",
+    "created_at": "2024-02-12"
+  },
+  {
+    "id": "207",
+    "title": "Gaming Trends 2024",
+    "content": "VR and cloud gaming are transforming the industry.",
+    "created_at": "2024-02-15"
+  },
+  {
+    "id": "208",
+    "title": "Fitness Journey",
+    "content": "Consistency is the key to building strength.",
+    "created_at": "2024-02-18"
+  },
+  {
+    "id": "209",
+    "title": "Book Review: The Silent Patient",
+    "content": "A gripping psychological thriller with a shocking twist.",
+    "created_at": "2024-02-20"
+  },
+  {
+    "id": "210",
+    "title": "Future of AI",
+    "content": "Generative models are redefining creativity and productivity.",
+    "created_at": "2024-02-22"
+  }
+]
+}

@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import Login from './Login.jsx'
 import Home from './Home.jsx'
 import NotFound from './NotFound.jsx'
+import Counter from './Counter.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -14,6 +15,11 @@ const router = createBrowserRouter([
     path: '/login',
     element: <Login/>
   },
+  
+  {
+    path:"/counter",
+    element: <Counter/>
+  },
     {
     path: '*',   // catch-all route
     element: <NotFound/>
@@ -22,7 +28,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  
    <RouterProvider router={router}/>
-  </StrictMode>
+  
 )

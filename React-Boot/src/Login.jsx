@@ -1,4 +1,5 @@
 import { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
 
@@ -20,6 +21,7 @@ function Login() {
     }
     return (
         <>
+            <Link className="btn btn-success mt-3" to="/">Home</Link>
             <form className="my-5" style={{ width: "50%", margin: "auto" }}>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
